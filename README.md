@@ -1,28 +1,39 @@
-🚀 Azure EdgeFlow Data Engineering Project
+🚀 Azure EdgeFlow – Enterprise Data Engineering Project
+
+📊 End-to-End Azure Data Pipeline | Medallion Architecture | Real-World Scenario
+
+---
+
 📌 Overview
-This project is a complete end-to-end Azure Data Engineering solution designed to simulate real-world enterprise data pipelines using modern Azure services. The project demonstrates data ingestion from external APIs, multi-layered storage using Medallion Architecture (Bronze → Silver → Gold), transformation via Azure Databricks, and reporting integration with Power BI.
 
-The project is based on practical, real-time scenarios asked in interviews and implements automation, dynamic pipelines, and parameterization using low/no-code Azure tools.
+**Azure EdgeFlow** is a complete enterprise-grade Data Engineering project simulating real-world use cases using Azure's modern cloud services. It showcases:
 
-🧰 Tools & Technologies
-Azure Data Factory (ADF) – ETL orchestration & dynamic pipeline creation
+- 🔗 Data ingestion from GitHub REST API  
+- 🧱 Medallion Architecture (Bronze → Silver → Gold)  
+- ⚙️ Transformations using Azure Databricks (PySpark)  
+- 🗃️ Modeling in Azure Synapse Analytics  
+- 📊 Visualization via Power BI
 
-Azure Data Lake Storage Gen2 – Raw/Silver/Gold zone architecture
+Built to reflect actual **interview use cases**, it uses low/no-code approaches (ADF dynamic pipelines, JSON config) and production best practices.
 
-Azure Databricks – Data transformation using PySpark
+---
 
-Azure Synapse Analytics – Data warehousing and SQL analytics
+## 🧰 Tools & Technologies
 
-Power BI – Dashboarding and reporting
+| Layer               | Tool/Service Used                |
+|---------------------|----------------------------------|
+| Ingestion           | Azure Data Factory (ADF)         |
+| Storage             | Azure Data Lake Storage Gen2     |
+| Processing          | Azure Databricks (PySpark)       |
+| Modeling            | Azure Synapse Analytics          |
+| Reporting           | Power BI                         |
+| Orchestration Logic | JSON Parameterization in ADF     |
+| Source Data         | GitHub REST API (CSV format)     |
 
-GitHub – Source data access via public API
+---
 
-JSON – Parameter config file for dynamic ADF pipelines
-
-🏗️ Architecture
-pgsql
-Copy
-Edit
+## 🏗️ Architecture Diagram
+,
                  +-------------------------+
                  |     GitHub API (CSV)    |
                  +-----------+-------------+
@@ -60,49 +71,52 @@ Edit
 ✅ Followed real-world DevOps-style project structure
 
 🚀 Setup Instructions
-1. Prerequisites
-Azure account (Free Tier works)
-GitHub account
-VS Code (recommended)
-Basic knowledge of Azure Portal, Python, and SQL
+1️⃣ Prerequisites
+✔️ Azure Account (Free Tier is fine)
 
-2. Create Resources
-Create:
+✔️ GitHub Account
 
+✔️ VS Code (optional, for JSON/parameter editing)
+
+✔️ Basic knowledge of Azure, Python, SQL
+
+2️⃣ Create Required Azure Resources
 Azure Resource Group
 
-Azure Data Lake Gen2 with Hierarchical Namespace
+Azure Data Lake Gen2 (with Hierarchical Namespace)
 
 Azure Data Factory
 
-Azure Databricks workspace
+Azure Databricks Workspace
 
-Azure Synapse workspace
+Azure Synapse Analytics Workspace
 
-Power BI Desktop (optional)
+(Optional) Power BI Desktop
 
-3. Pipeline Steps
-Phase 1: Ingest Data via ADF (Static & Dynamic Pipelines)
-Use Copy Activity to pull data from GitHub API to Bronze container
+3️⃣ Pipeline Steps
+🟤 Phase 1: Ingest Data via ADF
+Use Copy Activity to pull data from GitHub API to Bronze layer
 
-Configure Linked Services for HTTP & ADLS
+Configure Linked Services (HTTP & ADLS)
 
-Set up parameterized JSON and use ForEach Activity for dynamic ingestion
+Use parameterized JSON and ForEach loop for dynamic ingestion
 
-Phase 2: Transform with Databricks
-Read Bronze data into Spark DataFrames
+🟠 Phase 2: Transform with Databricks
+Read raw data into Spark DataFrames
 
-Apply transformation logic
+Apply transformation logic (filter, enrich, dedupe)
 
-Write output to Silver Zone in ADLS
+Write cleaned data to Silver zone
 
-Phase 3: Model in Synapse
-Create Fact and Dimension tables in Synapse
+🟡 Phase 3: Model in Synapse
+Create fact and dimension tables
 
-Load Silver data into Synapse tables
+Load data from Silver into Synapse SQL pool
 
-Phase 4: Visualize with Power BI
-Connect Power BI to Synapse SQL endpoint
+🔵 Phase 4: Visualize with Power BI
+Connect Power BI to Synapse
 
-Build interactive dashboards
+Build real-time dashboards using Gold layer
+
+
 
